@@ -1,6 +1,7 @@
 var is = require('assert');
 var Hero = require('../hero');
 var Food = require('../food');
+var Weapon = require('../weapon');
 
 describe("Hero", function(){
 
@@ -38,13 +39,17 @@ describe("Hero", function(){
   }),
   context('shoud have weapons', function(){
     var hero1 = new Hero("Shakti", "Pork");
+    var weapon1 = new Weapon("Sword of Glory", 30, 100, 20);
+    var weapon2 = new Weapon("Banana of Faith", 3, 10, 2);
     it('should have an empty rucksack', function(){
       is.equal(0, hero1.rucksack.length);
+    }),
+    it('should be abble to add weapons to the rucksack', function(){
+      hero1.addWeapon(weapon1);
+      hero1.addWeapon(weapon2);
+      is.equal(2, hero1.rucksack.length);
     })
-  })
-
-
-
+  });
 })
 
 
