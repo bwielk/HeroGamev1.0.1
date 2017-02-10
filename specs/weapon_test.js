@@ -22,11 +22,12 @@ describe("Weapon", function(){
       is.equal(70, weapon1.state);
     }),
     it("should be fixable", function(){
+      hero1.addWeapon(weapon1);
       hero1.fix(weapon1);
-      is.equal(80, weapon1.state);
+      is.equal(weapon1.state, 80);
     }),
     it('should be fragile', function(){
       is.equal(5, weapon1.fragility);
-    })
+    });
   });
 })

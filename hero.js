@@ -32,10 +32,20 @@ Hero.prototype = {
   }, 
 
   fix: function(weapon){
-    for(var item of this.rucksack){
+    for(var item of this.rucksack){      
       if(item.name === weapon.name){
        item.state += weapon.cracks;
        item.cracks = 0;
+      }
+    }
+  },
+  setWeapon(weapon){
+    for(var item of this.rucksack){
+      if(item === weapon){
+        this.current_weapon = item;
+      }
+      else{
+        return "This weapon doesn't exist";
       }
     }
   }

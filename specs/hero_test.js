@@ -49,6 +49,10 @@ describe("Hero", function(){
       hero1.addWeapon(weapon2);
       is.equal(2, hero1.rucksack.length);
     })
+    // it('should be able to set weapon', function(){
+    //   hero1.setWeapon(weapon2);
+    //   is.equal(weapon2, hero1.current_weapon);
+    // })
   });
 })
 
